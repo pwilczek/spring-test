@@ -17,6 +17,7 @@ public class StubBookService implements BookService {
 
     @Autowired private BookRepository bookRepository;
     @Autowired private PriceRepository priceRepository;
+    @Autowired private MarginService marginService;
 
     @Override
     public List<Book> findAll() {
@@ -25,7 +26,8 @@ public class StubBookService implements BookService {
 
     @Override
     public long priceFor(Book book) {
-        return priceRepository.priceFor(book);
+        long basePrice = priceRepository.priceFor(book);
+        return marginService.chargeMargin(basePrice);
     }
 
 

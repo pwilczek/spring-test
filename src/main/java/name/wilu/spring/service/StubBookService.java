@@ -25,4 +25,6 @@ public class StubBookService implements BookService {
     public long priceFor(Book book) {
         return priceRepository.priceFor(book);
     }
+
+
 }

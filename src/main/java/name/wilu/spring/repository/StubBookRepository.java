@@ -1,9 +1,8 @@
-package name.wilu.spring.repositiry;
+package name.wilu.spring.repository;
 
 import java.util.ArrayList;
 import java.util.List;
 import name.wilu.spring.model.Book;
-import org.springframework.stereotype.Repository;
 
 /**
  * Created by PLPIWIL2 on 8/21/2014.

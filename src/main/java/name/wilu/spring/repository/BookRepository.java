@@ -1,4 +1,4 @@
-package name.wilu.spring.repositiry;
+package name.wilu.spring.repository;
 
 import java.util.List;
 import name.wilu.spring.model.Book;

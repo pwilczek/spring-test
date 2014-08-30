@@ -6,9 +6,8 @@
 
     <bean name="bookRepository" class="name.wilu.spring.repository.StubBookRepository"/>
     <bean name="priceRepository" class="name.wilu.spring.repository.StubPriceRepository"/>
-    <bean name="bookService" class="name.wilu.spring.service.StubBookService">
+    <bean name="bookService" class="name.wilu.spring.service.StubBookService" autowire="constructor">
         <property name="priceRepository" ref="priceRepository"/>
-        <constructor-arg index="0" ref="bookRepository"/>
     </bean>
 
 </beans>

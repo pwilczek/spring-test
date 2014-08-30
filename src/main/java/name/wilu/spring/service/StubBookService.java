@@ -10,17 +10,18 @@ import name.wilu.spring.repository.PriceRepository;
  */
 public class StubBookService implements BookService {
 
-    private final BookRepository bookRepository;
+    private BookRepository bookRepository;
     private PriceRepository priceRepository;
 
-    StubBookService(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
+    @SuppressWarnings("UnusedDeclaration")
+     StubBookService() {
+        System.out.println("Default constructor call!");
     }
 
     @SuppressWarnings("UnusedDeclaration")
-    public void setPriceRepository(PriceRepository priceRepository) {
-        System.out.println("Setting price repo!");
-        this.priceRepository = priceRepository;
+    StubBookService(BookRepository bookRepository) {
+        System.out.println("Arg constructor call!");
+        this.bookRepository = bookRepository;
     }
 
     @Override
@@ -31,5 +32,16 @@ public class StubBookService implements BookService {
     @Override
     public long priceFor(Book book) {
         return priceRepository.priceFor(book);
+    }
+
+    public void setBookRepository(BookRepository bookRepository) {
+        System.out.println("Setting book repo!");
+        this.bookRepository = bookRepository;
+    }
+
+    @SuppressWarnings("UnusedDeclaration")
+    public void setPriceRepository(PriceRepository priceRepository) {
+        System.out.println("Setting price repo!");
+        this.priceRepository = priceRepository;
     }
 }

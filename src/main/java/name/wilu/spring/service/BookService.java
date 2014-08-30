@@ -8,4 +8,5 @@ import name.wilu.spring.model.Book;
  */
 public interface BookService {
     List<Book> findAll();
+    long priceFor(Book book);
 }

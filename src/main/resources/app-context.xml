@@ -5,8 +5,10 @@
 	   					   http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean name="bookRepository" class="name.wilu.spring.repository.StubBookRepository"/>
+    <bean name="priceRepository" class="name.wilu.spring.repository.StubPriceRepository"/>
     <bean name="bookService" class="name.wilu.spring.service.StubBookService">
-        <property name="bookRepository" ref="bookRepository"/>
+        <property name="priceRepository" ref="priceRepository"/>
+        <constructor-arg index="0" ref="bookRepository"/>
     </bean>
 
 </beans>
